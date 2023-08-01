@@ -1,4 +1,20 @@
--- Verification Component to receive on a VideoBus interface 
+--
+--  File Name:         VideoBusRx.vhd
+--
+--  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+--  Contributor(s):
+--     Louis Adriaens      louisadriaens@outlook.com
+--
+--
+--  Description:
+--  Verification Component to receive on a VideoBus interface 
+--  Based on OSVVM Framework
+--
+--
+--
+--  Revision History:
+--    Date      Version    Description
+--    08/2023   1.00       Initial revision
 
 library ieee;
     use ieee.std_logic_1164.all;

@@ -1,3 +1,22 @@
+#
+#  File Name:         RunAllTests.pro
+#
+#  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+#  Contributor(s):
+#     Louis Adriaens      louisadriaens@outlook.com
+#
+#
+#  Description:
+#  Script to build the VideoBus packages, make bmp_logs folder, and start the testbench. 
+#  Based on OSVVM Framework
+#
+#
+#
+#  Revision History:
+#    Date      Version    Description
+#    08/2023   1.00       Initial revision
+
+
 TestSuite VideoBus
 library osvvm_videobus
 

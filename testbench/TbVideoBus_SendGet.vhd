@@ -1,4 +1,20 @@
--- Some basic tests
+--
+--  File Name:         TbVideoBus_SendGet.vhd
+--
+--  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+--  Contributor(s):
+--     Louis Adriaens      louisadriaens@outlook.com
+--
+--
+--  Description:
+--  Some basic tests to show how the VideoBusRx and VideoBusTx VCs can be used
+--  Based on OSVVM Framework
+--
+--
+--
+--  Revision History:
+--    Date      Version    Description
+--    08/2023   1.00       Initial revision
 
 architecture SendGet of TestCtrl is
     signal sync1, TestDone : integer_barrier := 1;

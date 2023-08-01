@@ -1,3 +1,21 @@
+--
+--  File Name:         PassthroughDUT.vhd
+--
+--  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+--  Contributor(s):
+--     Louis Adriaens      louisadriaens@outlook.com
+--
+--
+--  Description:
+--     A simple passthrough DUT for the testbench
+--
+--
+--
+--  Revision History:
+--    Date      Version    Description
+--    08/2023   1.00       Initial revision
+-- 
+
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;

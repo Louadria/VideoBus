@@ -1,8 +1,21 @@
---------------------------------------------------------------------------------
--- Module        : BMP library
--- Description   : read and write bmp files for simulations
--- History       : 27/09/23 [LY] created
---------------------------------------------------------------------------------
+--
+--  File Name:         bmp_pack.vhd
+--
+--  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+--  Contributor(s):
+--     Louis Adriaens      louisadriaens@outlook.com
+--     Limor Yonatani
+--
+--
+--  Description:
+--     Bitmap logger
+--
+--
+--
+--  Revision History:
+--    Date      Version    Description
+--    08/2023   1.00       Initial revision
+-- 
 
 -- HOW TO USE:
    -- write_bmp_file_inst: entity work.write_bmp_file

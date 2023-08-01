@@ -1,3 +1,21 @@
+--
+--  File Name:         TestCtrl_e.vhd
+--
+--  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+--  Contributor(s):
+--     Louis Adriaens      louisadriaens@outlook.com
+--
+--
+--  Description:
+--  TestCtrl entity for the VideoBus example testbench
+--  Based on OSVVM Framework
+--
+--
+--
+--  Revision History:
+--    Date      Version    Description
+--    08/2023   1.00       Initial revision
+
 library ieee;
     use ieee.std_logic_1164.all;
     use ieee.numeric_std.all;

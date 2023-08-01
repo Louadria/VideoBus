@@ -1,3 +1,21 @@
+#
+#  File Name:         VideoBus.pro
+#
+#  Maintainer:        Louis Adriaens      email:  louisadriaens@outlook.com
+#  Contributor(s):
+#     Louis Adriaens      louisadriaens@outlook.com
+#
+#
+#  Description:
+#  Script to build the VideoBus packages. 
+#  Based on OSVVM Framework
+#
+#
+#
+#  Revision History:
+#    Date      Version    Description
+#    08/2023   1.00       Initial revision
+
 library osvvm_videobus
 # <comp>pkg.vhd must always be in order before <comp>.vhd
 
