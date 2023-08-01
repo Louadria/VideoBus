@@ -4,7 +4,10 @@ Verification Components for VideoBus interface.
 
 Consists of VideoBusRx for receiving and VideoBusTx for transmitting, and a bitmap logger for visual inspection. An example testbench is included to show how one might use these VCs, using a simple passthrough DUT. 
 
-VideoBus is a simple protocol to stream video using fval (frame valid) / lval (line valid) / dval (data valid), sometimes also called vsync, hsync, data_en (data enabled), respectively. The library has a configurable number of data streams, in case multiple pixels are sent per cycle. 
+VideoBus is a simple protocol to stream video using fval (frame valid) / lval (line valid) / dval (data valid). The library has a configurable number of data streams, in case multiple pixels are sent per cycle. 
+
+Below is an example of how a 4x4 image may be transmitted over a single data stream. 
+![timing diagram of clk/fval/lval/dval/data](VideoBusInterface.png)
 
 ## Compile OSVVM and run the tests
 ----------------------------------------------------
