@@ -9,6 +9,9 @@ VideoBus is a simple protocol to stream video using fval (frame valid) / lval (l
 Below is an example of how a 4x4 image may be transmitted over a single data stream. 
 ![timing diagram of clk/fval/lval/dval/data](VideoBusInterface.png)
 
+When using multiple data streams, multiple sequential pixels are sent simultaneously. Below is an example of how the same 4x4 image may be transmitted over 2 data streams.
+![timing diagram of clk/fval/lval/dval/data1/data2](VideoBusInterface_2ds.png)
+
 ## Compile OSVVM and run the tests
 ----------------------------------------------------
 

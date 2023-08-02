@@ -33,8 +33,8 @@ entity TbVideoBus is
     generic (
         VIDEO_HEIGHT     : natural := 64;  -- number of lines in a frame 
         VIDEO_WIDTH      : natural := 64;  -- number of pixels in a line
-        PIXEL_DEPTH      : natural := 24; -- number of bits in a pixel (RGB = 3*8)
-        NUM_DATA_STREAMS : natural := 1   -- number of data streams
+        PIXEL_DEPTH      : natural := 24;  -- number of bits in a pixel (RGB = 3*8)
+        NUM_DATA_STREAMS : natural := 1    -- number of pixel data streams
     );
 end entity TbVideoBus;
 architecture TestHarness of TbVideoBus is

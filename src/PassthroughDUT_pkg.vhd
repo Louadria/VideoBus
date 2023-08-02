@@ -30,7 +30,7 @@ package PassthroughDUTPkg is
     
         generic (
             PIXEL_DEPTH      : natural := 24; -- number of bits in a pixel
-            NUM_DATA_STREAMS : natural := 1
+            NUM_DATA_STREAMS : natural := 1   -- number of pixel data streams
         );
         port (
             -- VideoBus input

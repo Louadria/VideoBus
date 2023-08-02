@@ -43,7 +43,7 @@ package VideoBusRxPkg is
             VIDEO_HEIGHT     : natural := 64;  -- number of lines in a frame
             VIDEO_WIDTH      : natural := 64;  -- number of pixels in a line
             PIXEL_DEPTH      : natural := 24;  -- number of bits in a pixel
-            NUM_DATA_STREAMS : natural := 1
+            NUM_DATA_STREAMS : natural := 1    -- number of pixel data streams
         );
         port (
             -- Globals

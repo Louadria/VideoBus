@@ -35,11 +35,11 @@ library work;
 entity VideoBusTx is
     generic (
         MODEL_ID_NAME    : string := "";
-        DEFAULT_DELAY    : time := 1 ns; -- used for tpd (Total Propagation Delay)
+        DEFAULT_DELAY    : time := 1 ns;   -- used for tpd (Total Propagation Delay)
         VIDEO_HEIGHT     : natural := 64;  -- number of lines in a frame
         VIDEO_WIDTH      : natural := 64;  -- number of pixels in a line
-        PIXEL_DEPTH      : natural := 24;    -- number of bits in a pixel
-        NUM_DATA_STREAMS : natural := 1
+        PIXEL_DEPTH      : natural := 24;  -- number of bits in a pixel
+        NUM_DATA_STREAMS : natural := 1    -- number of pixel data streams
     );
     port (
         -- Globals
