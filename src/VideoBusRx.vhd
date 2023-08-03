@@ -190,7 +190,7 @@ begin
                     end loop;
                 end if;
             end loop;
-            AffirmIf(ModelID, (pixelCount = VIDEO_WIDTH), "pixelCount ?= VIDEO_WIDTH");
+            AffirmIf(ModelID, (pixelCount = VIDEO_WIDTH), "pixelCount: " & to_string(pixelCount) & " /= VIDEO_WIDTH: " & to_string(VIDEO_WIDTH));
             -- Fill missing pixels
             for i in 1 to (VIDEO_WIDTH - pixelCount) loop 
                 RxData := (others => 'U');
@@ -200,7 +200,7 @@ begin
             lineCount := lineCount + 1;
         end if;
     end loop;
-    AffirmIf(ModelID, (lineCount = VIDEO_HEIGHT), "lineCount ?= VIDEO_HEIGHT");
+    AffirmIf(ModelID, (lineCount = VIDEO_HEIGHT), "lineCount:  " & to_string(lineCount) & " /= VIDEO_HEIGHT: " & to_string(VIDEO_HEIGHT));
     -- Fill missing pixels
     for j in 1 to (VIDEO_HEIGHT - lineCount) loop
         for i in 1 to VIDEO_WIDTH loop
