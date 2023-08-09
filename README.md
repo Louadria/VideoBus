@@ -12,6 +12,16 @@ Below is an example of how a 4x4 image may be transmitted over a single data str
 When using multiple data streams, multiple sequential pixels are sent simultaneously. Below is an example of how the same 4x4 image may be transmitted over 2 data streams.
 ![timing diagram of clk/fval/lval/dval/data1/data2](VideoBusInterface_2ds.png)
 
+Notice that the timing regarding the fval/lval/dval signals is not strict. For example, this would still be a valid transmission of the same 4x4 image:
+![timing diagram of clk/fval/lval/dval/data1/data2 with non-strict timing](VideoBusInterface_timing_example.png)
+
+To this regard, the VideoBusTx VC has 3 model options which can be configured: 
+1. FVAL_GUARD_CYCLES: number of cycles between successive frames
+2. LVAL_GUARD_CYCLES: number of cycles between successive lines
+3. DVAL_GUARD_CYCLES: number of cycles between lval high -> dval high / dval low -> lval low
+
+These are all set to 1 by default, resulting in the timing as shown in the first 2 Figures. 
+
 ## Compile OSVVM and run the tests
 ----------------------------------------------------
 
