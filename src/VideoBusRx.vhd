@@ -171,34 +171,34 @@ begin
     wait for 0 ns; -- Allow ModelID to become valid
     SetLogEnable(ModelID, PASSED, false); -- don't log passed affirmations
     
-    wait until rising_edge(vid_fval_in);
+    wait on Clk until rising_edge(Clk) and vid_fval_in = '1' ;
     Log(ModelID, "New frame started in VideoBusRx!", INFO); 
     pixelCount := 0;
     lineCount := 0;
     while (vid_fval_in = '1') loop
-        wait until rising_edge(Clk);
         if (vid_lval_in = '1') then
             pixelCount := 0;
             while (vid_lval_in = '1') loop
-                wait until rising_edge(Clk);
                 if (vid_dval_in = '1') then
                     for dataStream in 0 to NUM_DATA_STREAMS-1 loop
                         RxData := vid_data_in(dataStream);
                         Push(ReceiveFifo, RxData);
-                        Increment(ReceiveCount);
                         pixelCount := pixelCount + 1;
                     end loop;
+                    ReceiveCount <= ReceiveCount + NUM_DATA_STREAMS; -- accumulate values just pushed
                 end if;
+                wait until rising_edge(Clk);
             end loop;
             AffirmIf(ModelID, (pixelCount = VIDEO_WIDTH), "pixelCount: " & to_string(pixelCount) & " /= VIDEO_WIDTH: " & to_string(VIDEO_WIDTH));
             -- Fill missing pixels
             for i in 1 to (VIDEO_WIDTH - pixelCount) loop 
                 RxData := (others => 'U');
                 Push(ReceiveFifo, RxData);
-                Increment(ReceiveCount);
             end loop;
+            ReceiveCount <= ReceiveCount + (VIDEO_WIDTH - pixelCount); -- accumulate values just pushed
             lineCount := lineCount + 1;
         end if;
+        wait until rising_edge(Clk);
     end loop;
     AffirmIf(ModelID, (lineCount = VIDEO_HEIGHT), "lineCount:  " & to_string(lineCount) & " /= VIDEO_HEIGHT: " & to_string(VIDEO_HEIGHT));
     -- Fill missing pixels
@@ -206,9 +206,9 @@ begin
         for i in 1 to VIDEO_WIDTH loop
             RxData := (others => 'U');
             Push(ReceiveFifo, RxData);
-            Increment(ReceiveCount);
         end loop;   
     end loop;
+    ReceiveCount <= ReceiveCount + VIDEO_WIDTH*(VIDEO_HEIGHT - lineCount); -- accumulate values just pushed
 end process VideoBusHandler;
 
 end architecture SimpleBlockingReceive;
