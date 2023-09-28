@@ -1,10 +1,10 @@
 # VideoBus
 
-Verification Components for VideoBus interface. 
+Verification Components for VideoBus interface. VideoBus is a simple protocol to stream video using fval (frame valid) / lval (line valid) / dval (data valid). It is commonly used to connect rather simple video blocks in a pipe. The signals are derived from the CameraLink standard, which is rather common in industrial cameras. (See: https://www.imagelabs.com/wp-content/uploads/2010/10/CameraLink5.pdf Chapter 2)
 
-Consists of VideoBusRx for receiving and VideoBusTx for transmitting, and a bitmap logger for visual inspection. An example testbench is included to show how one might use these VCs, using a simple passthrough DUT. 
+Although it is related to VSync, HSync, DataEnable video, there are no real video timings involved. I.e., there is no front porch, back porch, blanking video. 
 
-VideoBus is a simple protocol to stream video using fval (frame valid) / lval (line valid) / dval (data valid). The library has a configurable number of data streams, in case multiple pixels are sent per cycle. 
+The library onsists of VideoBusRx for receiving, VideoBusTx for transmitting, and a bitmap logger for visual inspection. An example testbench is included to show how one might use these VCs, using a simple passthrough DUT. Furthermore, the library has a configurable number of data streams, in case multiple pixels are sent per cycle. 
 
 Below is an example of how a 4x4 image may be transmitted over a single data stream. 
 ![timing diagram of clk/fval/lval/dval/data](VideoBusInterface.png)
