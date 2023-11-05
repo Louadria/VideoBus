@@ -23,10 +23,12 @@ analyze ./src/VideoBusRx_pkg.vhd
 analyze ./src/VideoBusRx.vhd
 analyze ./src/VideoBusTx_pkg.vhd
 analyze ./src/VideoBusTx.vhd
+analyze ./src/VideoBusPkg.vhd
 
 analyze ./src/PassthroughDUT_pkg.vhd
 analyze ./src/PassthroughDUT.vhd
 
+analyze ./src/bmp_pack_pkg.vhd
 analyze ./src/bmp_pack.vhd
 
 analyze ./src/VideoBusContext.vhd

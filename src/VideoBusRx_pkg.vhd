@@ -30,9 +30,11 @@ library osvvm;
 library osvvm_common;
     context osvvm_common.OsvvmCommonContext;
 
+library work;
+    use work.VideoBusPkg.all;
+
 package VideoBusRxPkg is
 
-    type VideoDataArray is array (natural range <>) of std_logic_vector;
 
     ----------------------------------------
     component VideoBusRx is
