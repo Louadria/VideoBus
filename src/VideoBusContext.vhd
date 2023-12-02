@@ -24,5 +24,6 @@ context VideoBusContext is
     use osvvm_videobus.bmplibpack.all;
     use osvvm_videobus.VideoBusRxPkg.all;
     use osvvm_videobus.VideoBusTxPkg.all;
+    use osvvm_videobus.VideoBusPkg.all;
 
 end context VideoBusContext;

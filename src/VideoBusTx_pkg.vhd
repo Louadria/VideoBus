@@ -30,6 +30,9 @@ library osvvm;
 library osvvm_common;
     context osvvm_common.OsvvmCommonContext;
 
+library work;
+    use work.VideoBusPkg.all;
+
 package VideoBusTxPkg is
 
     type VideoBusOptionsType is (
@@ -42,7 +45,6 @@ package VideoBusTxPkg is
         OPTIONS_MARKER
     );
 
-    type VideoDataArray is array (natural range <>) of std_logic_vector;
 
     procedure GetVideoBusParameter(variable Params : inout ModelParametersPType; Operation : in VideoBusOptionsType; OutValue : out integer);
 
