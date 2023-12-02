@@ -102,15 +102,15 @@ begin
         for i in 1 to VIDEO_HEIGHT loop
             for j in 1 to VIDEO_WIDTH loop
                 TxData := RV.RandSlv(24);
-                Send(VideoBusTxTransRec, TxData);
                 Push(TransmitFifo, TxData);
+                Send(VideoBusTxTransRec, TxData);
             end loop;
         end loop;
 
         GetTransactionCount(VideoBusTxTransRec, TransactionCount);
         AffirmIfEqual(ManagerId, TransactionCount, 4 * VIDEO_HEIGHT * VIDEO_WIDTH, "Transaction Count");
 
-        WaitForBarrier(sync1);
+--        WaitForBarrier(sync1);
 
         -- End of test
         WaitForBarrier(TestDone);
@@ -131,7 +131,7 @@ begin
         ManagerId := NewID("VideoBusReceiver", TbID);
         SetLogEnable(PASSED, FALSE);    -- Disable PASSED logs
 
-        WaitForBarrier(sync1);
+ --       WaitForBarrier(sync1);
 
         -- Receive red frame
         for i in 1 to VIDEO_HEIGHT loop
