@@ -18,7 +18,7 @@
 
 library osvvm_videobus
 
-analyze  OsvvmTestCommonPkg.vhd
+analyze [CreateTestCaseCommonPkg OsvvmTestCommonPkg ../ValidatedResults]
 
 analyze  TestCtrl_e.vhd
 analyze  TbVideoBus.vhd

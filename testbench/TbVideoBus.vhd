@@ -13,6 +13,7 @@
 --
 --  Revision History:
 --    Date      Version    Description
+--    07/2024   2024.07    Updated calls to CreateClock and CreateReset
 --    08/2023   1.00       Initial revision
 -- 
 
@@ -99,14 +100,14 @@ architecture TestHarness of TbVideoBus is
     );
     end component;
 begin
-    -- create Clock
-    Osvvm.TbUtilPkg.CreateClock (
+    -- create Clock (from OSVVM Library)
+    CreateClock (
         Clk        => Clk,
         Period     => Tperiod_Clk
     );
 
-    -- create nReset
-    Osvvm.TbUtilPkg.CreateReset (
+    -- create nReset (from OSVVM Library)
+    CreateReset (
         Reset       => nReset,
         ResetActive => '0',
         Clk         => Clk,

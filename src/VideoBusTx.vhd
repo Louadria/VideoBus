@@ -14,6 +14,7 @@
 --
 --  Revision History:
 --    Date      Version    Description
+--    03/2024   2024.03    Updated SafeResize to use ModelID
 --    08/2023   1.00       Initial revision
 
 library ieee;
@@ -116,7 +117,7 @@ begin
             case operation is
                 -- Model Transaction Dispatch
                 when SEND =>
-                    TxData := SafeResize(TransRec.DataToModel, TxData'length);
+                    TxData := SafeResize(ModelID, TransRec.DataToModel, TxData'length);
                     Push(TransmitFifo, TxData);
                     Log(ModelID,
                         "SEND Queueing Transaction: " & to_hxstring(TxData) &
@@ -189,7 +190,7 @@ begin
 
         TransmitLoop : loop
                 -- Find Transaction
-            if Empty(TransmitFifo) then
+            if IsEmpty(TransmitFifo) then
                 WaitForToggle(TransmitRequestCount);
             else 
                 wait for 0 ns; -- allow TransmitRequestCount to settle if both happen at same time.

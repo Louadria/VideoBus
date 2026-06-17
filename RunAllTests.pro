@@ -20,7 +20,7 @@
 TestSuite VideoBus
 library osvvm_videobus
 
-build ./VideoBus.pro
+# include ./VideoBus.pro
 
 # make the bmp_logs directory if it does not exist
 set CURR_DIR [pwd]
